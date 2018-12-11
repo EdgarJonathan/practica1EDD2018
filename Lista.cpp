@@ -34,10 +34,11 @@ usuario ListaUsuario::getUsuario(std::string id)
 
 }
 
-void ListaUsuario::insertarLista(usuario user)
+std::string ListaUsuario::insertarLista(usuario user)
 {
       Nodo* nuevo;
       nuevo = new Nodo(user);
+
 
     if(primero==NULL)
     {
@@ -45,14 +46,18 @@ void ListaUsuario::insertarLista(usuario user)
         primero->setSiguiente(NULL);
         primero->setAnterior(NULL);
         ultimo= primero;
+        
+        return "se agrego exitosamente";
 
     }else  if(buscarId(nuevo->datoNodo().id)==NULL)
     {
       ordenarLista(nuevo);
+
+      return "se agrego exitosamente";
     }
     else
     {
-         std::cout <<"id ya existe"<<endl;
+         return "id ya existe";
     }
 
 }

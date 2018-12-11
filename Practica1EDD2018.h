@@ -5,6 +5,8 @@
 #define PRACTICA1EDD2018_H
 
 #include <ngrest/common/Service.h>
+#include <string>
+#include "Lista.h"
 
 
 //! Dummy description for the service
@@ -16,11 +18,19 @@
 class Practica1EDD2018: public ngrest::Service
 {
 public:
- 
+    // *method: GET
+    // *location: /devolver/{id}
+    std::string devolver(const std::string& id);
+
 
     // *method: POST
-    // *location: /devolver
-    std::string devolver(const std::string& id);
+    // *location: /newuser
+    std::string newuser(const usuario& User);
+
+   	// *method: GET
+    // *location: /getUsuarios
+    std::list<usuario> getUsuarios();
+
 };
 
 

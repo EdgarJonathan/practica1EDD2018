@@ -4,11 +4,26 @@
 #include "Practica1EDD2018.h"
 
 
-
+ListaUsuario mlist;
 
 std::string Practica1EDD2018::devolver(const std::string& id)
 {
-	
-
     return "resultado" + id;
+}
+
+std::string Practica1EDD2018::newuser(const usuario& User)
+{
+	 std::string result;
+	 result = mlist.insertarLista(User);
+	return result;
+}
+
+
+std::list<usuario> Practica1EDD2018::getUsuarios()
+{
+	std::list<usuario> lista;
+
+	lista =mlist.linealizar();
+
+	return lista;
 }

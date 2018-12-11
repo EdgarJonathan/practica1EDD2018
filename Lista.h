@@ -14,7 +14,7 @@ public:
     Nodo* primero;
     Nodo* ultimo;
     ListaUsuario();
-    void insertarLista(usuario user);
+    std::string insertarLista(usuario user);
 
     usuario getUsuario(std::string id);
     std::list<usuario> linealizar();
