@@ -5,11 +5,8 @@
 
 
 ListaUsuario mlist;
+PilaRecurso  mpila;
 
-std::string Practica1EDD2018::devolver(const std::string& id)
-{
-    return "resultado" + id;
-}
 
 std::string Practica1EDD2018::newuser(const usuario& User)
 {
@@ -26,4 +23,16 @@ std::list<usuario> Practica1EDD2018::getUsuarios()
 	lista =mlist.linealizar();
 
 	return lista;
+}
+
+
+std::string Practica1EDD2018::newrecurso(const recurso& R)
+{
+	std::string result = "no OK";
+
+	mpila.push(R);
+
+	result = "ok";
+
+	return result;
 }

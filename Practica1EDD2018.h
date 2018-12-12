@@ -7,6 +7,7 @@
 #include <ngrest/common/Service.h>
 #include <string>
 #include "Lista.h"
+#include "Pila.h"
 
 
 //! Dummy description for the service
@@ -18,14 +19,17 @@
 class Practica1EDD2018: public ngrest::Service
 {
 public:
-    // *method: GET
-    // *location: /devolver/{id}
-    std::string devolver(const std::string& id);
+
 
 
     // *method: POST
     // *location: /newuser
     std::string newuser(const usuario& User);
+
+    // *method: POST
+    // *location: /newrecurso
+    std::string newrecurso(const recurso& R);
+
 
    	// *method: GET
     // *location: /getUsuarios
