@@ -6,7 +6,7 @@
 
 ListaUsuario mlist;
 PilaRecurso  mpila;
-
+ColaServicio miCola;
 
 std::string Practica1EDD2018::newuser(const usuario& User)
 {
@@ -36,3 +36,63 @@ std::string Practica1EDD2018::newrecurso(const recurso& R)
 
 	return result;
 }
+
+
+std::list<servicio> Practica1EDD2018::getcolaservicios()
+{
+	std::list<servicio> cola;
+
+	cola =miCola.linealizar();
+
+	return cola;
+}
+
+
+std::string Practica1EDD2018::getrecurso( std::string& id)
+{
+
+	std::string resultado ="";
+
+	//generamos id session aleatorio
+	char aleatorio[10];
+      srand(time(NULL));
+       for(int i=0; i <= 9; i++)
+       	aleatorio[i] = 33 + rand() % (126 - 33);
+
+
+       std::string aux =std::string(aleatorio);
+
+   usuario search = mlist.buscarUserId(id);
+   recurso recursoAux =mpila.pop();
+
+
+   if((search.nombre.compare("NULL")!=0)&&(recursoAux.tipo.compare("NULL")!=0)) 
+   {
+   		servicio nuevoServicio;
+   		nuevoServicio.idSession = aux;
+   		nuevoServicio.idUser    = search.nombre;
+   		nuevoServicio.contenido = recursoAux.contenido;
+
+   		miCola.encolar(nuevoServicio);
+
+   		resultado ="\"recurso\":{\n \"id session\": \""+aux+"\" \n \"usuario\": \""+search.nombre+"\"";
+
+
+   }else if(search.nombre.compare("NULL")==0)
+   {
+   	resultado = "usuario no existe";
+   }else if(recursoAux.tipo.compare(NULL)==0)
+   {
+
+   		resultado = "la pila de recursos esta vacia";
+   }
+      
+
+
+
+
+	return resultado;
+}
+
+
+

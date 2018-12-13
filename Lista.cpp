@@ -36,9 +36,9 @@ usuario ListaUsuario::getUsuario(std::string id)
 
 std::string ListaUsuario::insertarLista(usuario user)
 {
+
       Nodo* nuevo;
       nuevo = new Nodo(user);
-
 
     if(primero==NULL)
     {
@@ -46,18 +46,18 @@ std::string ListaUsuario::insertarLista(usuario user)
         primero->setSiguiente(NULL);
         primero->setAnterior(NULL);
         ultimo= primero;
-        
+
         return "se agrego exitosamente";
 
     }else  if(buscarId(nuevo->datoNodo().id)==NULL)
     {
-      ordenarLista(nuevo);
+        ordenarLista(nuevo);
 
-      return "se agrego exitosamente";
+        return "se agrego exitosamente";
     }
     else
     {
-         return "id ya existe";
+        return "id ya existe";
     }
 
 }
@@ -131,4 +131,37 @@ void ListaUsuario::imprimirLista()
 
        actual=actual->getSiguiente();
     }
+}
+
+usuario ListaUsuario::buscarUserId(std::string d)
+{
+
+
+//    struct usuario{
+//        std::string id;
+//        std::string nombre;
+//        std::string correo;
+//        std::string fecha;
+//    };
+
+    usuario userAux ={"","","",""};
+
+    Nodo* tmp = primero;
+        while (tmp!=NULL) {
+            if(tmp->datoNodo().id==d){
+
+                userAux.nombre =tmp->datoNodo().nombre;
+                userAux.correo = tmp->datoNodo().correo;
+                userAux.fecha = tmp->datoNodo().fecha;
+                userAux.id   = tmp->datoNodo().id;
+
+                return userAux;
+            }
+            tmp = tmp->getSiguiente();
+        }
+
+
+
+        return userAux;
+
 }

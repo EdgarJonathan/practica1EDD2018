@@ -8,6 +8,9 @@
 #include <string>
 #include "Lista.h"
 #include "Pila.h"
+#include  "Cola.h"
+
+
 
 
 //! Dummy description for the service
@@ -30,10 +33,23 @@ public:
     // *location: /newrecurso
     std::string newrecurso(const recurso& R);
 
+    //template<class Dato>
 
-   	// *method: GET
+    // *method: GET
+    // *location: /getrecurso/{id}
+   
+    std::string getrecurso( std::string& id);
+
+
+	   	// *method: GET
     // *location: /getUsuarios
     std::list<usuario> getUsuarios();
+
+   	// *method: GET
+    // *location: /getcolaservicios
+    std::list<servicio> getcolaservicios();
+
+
 
 };
 

@@ -71,5 +71,16 @@ void ColaServicio::imprimirCola()
 }
 
 
+std::list<servicio> ColaServicio::linealizar()
+{
+    std::list<servicio> lista;
+    NCola *tmp = primeroC;
+    while(tmp!=NULL){
+        lista.push_back(tmp->datoNodo());
+        tmp = tmp->getSiguiente();
+    }
+     return lista;
+}
+
 
 

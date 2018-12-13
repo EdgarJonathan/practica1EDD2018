@@ -23,6 +23,7 @@ public:
     void encolar(servicio s);
     servicio desencolar();
     void imprimirCola();
+    std::list<servicio> linealizar();
 
 };
 

@@ -8,9 +8,12 @@
 class  ListaUsuario
 {
 private:
-    Nodo* buscarId(std::string d);
+
     void ordenarLista(Nodo* nuevo);
+     Nodo* buscarId(std::string d);
 public:
+
+    usuario buscarUserId(std::string d);
     Nodo* primero;
     Nodo* ultimo;
     ListaUsuario();
