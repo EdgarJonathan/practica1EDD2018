@@ -144,7 +144,7 @@ usuario ListaUsuario::buscarUserId(std::string d)
 //        std::string fecha;
 //    };
 
-    usuario userAux ={"","","",""};
+    usuario userAux ={"NULL","NULL","NULL","NULL"};
 
     Nodo* tmp = primero;
         while (tmp!=NULL) {

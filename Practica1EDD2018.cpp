@@ -75,13 +75,13 @@ std::string Practica1EDD2018::getrecurso( std::string& id)
 
    		miCola.encolar(nuevoServicio);
 
-   		resultado ="\"recurso\":{\n \"id session\": \""+aux+"\" \n \"usuario\": \""+search.nombre+"\"";
+   		resultado ="recurso:{id session: "+aux+" usuario: "+search.nombre+" contenido : "+recursoAux.contenido;
 
 
    }else if(search.nombre.compare("NULL")==0)
    {
    	resultado = "usuario no existe";
-   }else if(recursoAux.tipo.compare(NULL)==0)
+   }else if(recursoAux.tipo.compare("NULL")==0)
    {
 
    		resultado = "la pila de recursos esta vacia";

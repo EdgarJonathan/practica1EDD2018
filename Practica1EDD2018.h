@@ -37,7 +37,6 @@ public:
 
     // *method: GET
     // *location: /getrecurso/{id}
-   
     std::string getrecurso( std::string& id);
 
 
